@@ -82,6 +82,16 @@ nav a:hover {
   .menu-toggle { display: block; }
 }
 
+/* Efeito de desfoque no conteúdo quando menu aberto */
+body.menu-open main,
+body.menu-open header,
+body.menu-open footer {
+  filter: blur(4px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
 main { margin-top: 70px; }
 
 /* Seções */
@@ -191,22 +201,16 @@ footer { background: #0a3d62; color: white; text-align: center; padding: 20px; f
 </div>
 
 <script>
-// Menu hamburguer responsivo
+// Menu hamburguer responsivo com desfoque
 const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("nav");
+
 toggle.addEventListener("click", () => {
   nav.classList.toggle("active");
   toggle.classList.toggle("open");
+  document.body.classList.toggle("menu-open"); // adiciona/remova a classe para desfoque
 });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
