@@ -15,50 +15,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Barra fixa no topo moderna */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #1e3799;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background 0.3s, box-shadow 0.3s;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 15px 25px;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s, transform 0.2s;
-}
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 5px;
-  left: 0;
-  background: #ffdd59;
-  transition: width 0.3s;
-}
-nav a:hover {
-  color: #ffdd59;
-  transform: scale(1.1);
-}
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Ajuste para o conteúdo não ficar atrás do menu */
-main {
-  margin-top: 70px;
-}
-
 /* Header */
 header {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092795364-44b1f5f0a4c2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
@@ -142,18 +98,6 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; font-
 </style>
 </head>
 <body>
-
-<!-- Barra fixa no topo -->
-<nav id="main-nav">
-  <a href="#sobre">Sobre Nós</a>
-  <a href="#benefits">Por que escolher</a>
-  <a href="#servicos">Serviços</a>
-  <a href="#garantia">Garantias</a>
-  <a href="#depoimentos">Depoimentos</a>
-  <a href="#faq">FAQ</a>
-  <a href="#galeria">Galeria</a>
-  <a href="#contato">Contato</a>
-</nav>
 
 <header>
   <div class="logo-container">
@@ -247,21 +191,6 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; font-
   <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.instagram.com/zonaseguraa?igsh=MWtvNzE4aTJxNm9ieQ==" class="instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
 </div>
-
-<!-- Scroll suave -->
-<script>
-const menuLinks = document.querySelectorAll("nav a");
-menuLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-    const offset = 70; // altura da barra fixa
-    const elementPosition = targetSection.offsetTop - offset;
-    window.scrollTo({ top: elementPosition, behavior: 'smooth' });
-  });
-});
-</script>
 
 </body>
 </html>
