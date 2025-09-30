@@ -3,112 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Zona Segura oferece instalação de câmeras de segurança, monitoramento remoto e manutenção preventiva em Brasília. Produtos com até 2 anos de garantia e serviços com 3 meses de garantia.">
-<meta name="keywords" content="segurança eletrônica, instalação de câmeras, monitoramento remoto, Brasília, Zona Segura, garantia, serviços de segurança">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Zona Segura">
-<link rel="canonical" href="https://www.zonasegurasistemas.com.br">
+<title>Zona Segura</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- Google Search Console -->
-<meta name="google-site-verification" content="COLE_AQUI_SEU_CÓDIGO_DO_SEARCH_CONSOLE" />
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-14ZH0RSTXW"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-14ZH0RSTXW');
-</script>
-
 <style>
 /* --- CSS Geral --- */
-body { font-family: 'Segoe UI', Tahoma, sans-serif; margin:0; padding:0; color:#333; line-height:1.6; scroll-behavior:smooth; }
-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092795364-44b1f5f0a4c2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat; color:white; padding:80px 20px; text-align:center; }
-.logo-container { text-align:center; margin-top:20px; }
-.logo { max-width:150px; height:auto; margin-bottom:10px; }
-.slogan { font-family: 'Poppins', sans-serif; font-size:22px; color:white; font-weight:600; margin:0; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092795364-44b1f5f0a4c2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+.logo-container { text-align: center; margin-top: 20px; }
+.logo { max-width: 150px; height: auto; margin-bottom: 10px; }
+.slogan { font-family: 'Poppins', sans-serif; font-size: 22px; color: white; font-weight: 600; margin: 0; }
 
-/* Menu fixo e responsivo */
+/* Menu principal */
 nav {
   display: flex;
   justify-content: center;
-  background:#1e3799;
+  background: #1e3799;
   flex-wrap: wrap;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow:0px 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
 }
 nav a {
-  color:white;
-  padding:15px 20px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:background 0.3s, color 0.3s;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
 }
 nav a:hover {
-  background:#0a3d62;
-  color:#ffdd59;
+  background: #0a3d62;
+  color: #ffdd59;
 }
+
 /* Botão hamburguer */
 .menu-toggle {
   display: none;
-  position: absolute;
-  right: 20px;
-  top: 15px;
   font-size: 28px;
   color: white;
   cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
 }
-.menu-toggle i {
-  transition: transform 0.3s ease;
-}
-.menu-toggle.open i {
-  transform: rotate(90deg);
-}
+.menu-toggle i { transition: transform 0.3s ease; }
+.menu-toggle.open i { transform: rotate(90deg); }
 
-/* Menu responsivo com animação */
+/* Mobile menu */
 @media (max-width: 768px) {
   nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100vh;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
+    padding-top: 60px;
+    transition: left 0.3s ease;
   }
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-  nav.active a {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  .menu-toggle {
-    display: block;
-  }
+  nav.active { left: 0; }
+  nav a { display: block; padding: 15px; border-top: 1px solid rgba(255,255,255,0.2); }
+  .menu-toggle { display: block; }
 }
 
-main { margin-top: 70px; } /* Espaço para menu fixo */
+main { margin-top: 70px; }
 
-section { padding:60px 20px; }
-section h2 { text-align:center; font-size:2.2em; margin-bottom:20px; color:#0a3d62; }
-section ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-section ul li { background:white; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:250px; text-align:center; transition:transform 0.4s ease; }
-section ul li:hover { transform:translateY(-10px) scale(1.03); }
+/* Seções */
+section { padding: 60px 20px; }
+section h2 { text-align: center; font-size: 2.2em; margin-bottom: 20px; color: #0a3d62; }
 
-/* Botão fixo no canto esquerdo */
+/* Botão fixo esquerdo */
 .fixed-button-left {
   position: fixed;
   bottom: 20px;
@@ -128,26 +108,7 @@ section ul li:hover { transform:translateY(-10px) scale(1.03); }
   background: #128C7E;
 }
 
-/* Galeria de imagens */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-.gallery img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* Botões flutuantes no canto direito */
+/* Botões flutuantes direita */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -165,39 +126,38 @@ section ul li:hover { transform:translateY(-10px) scale(1.03); }
   height: 70px;
   border-radius: 50%;
   color: white;
-  text-decoration: none;
   font-size: 32px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.4);
   transition: transform 0.3s, box-shadow 0.3s;
   opacity: 0;
-  transform: translateY(50px) scale(1);
+  transform: translateY(50px);
   animation: floatIn 0.6s forwards;
 }
-.floating-buttons a:hover {
-  transform: scale(1.15) rotate(-5deg);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-}
+.floating-buttons a:hover { transform: scale(1.15) rotate(-5deg); box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
 .floating-buttons a:nth-child(1) { animation-delay: 0.2s; }
 .floating-buttons a:nth-child(2) { animation-delay: 0.4s; }
 .whatsapp { background-color: #25D366; }
 .instagram { background-color: #E4405F; }
 
-@keyframes floatIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes floatIn { to { opacity: 1; transform: translateY(0); } }
 
-footer { background:#0a3d62; color:white; text-align:center; padding:20px; font-size:0.9em; }
+footer { background: #0a3d62; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
 </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo da Zona Segura" class="logo">
-        <h1 class="slogan">Zona Segura - Sistemas de segurança</h1>
-    </div>
+  <div class="logo-container">
+      <img src="logo.png" alt="Logo da Zona Segura" class="logo">
+      <h1 class="slogan">Zona Segura - Sistemas de segurança</h1>
+  </div>
 </header>
 
+<!-- Botão hamburguer -->
+<span class="menu-toggle"><i class="fas fa-bars"></i></span>
+
+<!-- Menu principal -->
 <nav>
-    <span class="menu-toggle"><i class="fas fa-bars"></i></span>
     <a href="#sobre">Sobre Nós</a>
     <a href="#benefits">Por que escolher</a>
     <a href="#servicos">Serviços</a>
@@ -209,99 +169,25 @@ footer { background:#0a3d62; color:white; text-align:center; padding:20px; font-
 </nav>
 
 <main>
-<section id="sobre">
-    <h2>Sobre a Zona Segura</h2>
-    <p>A Zona Segura é especialista em segurança eletrônica em Brasília, oferecendo soluções completas para sua casa e empresa. Garantimos proteção, tranquilidade e tecnologia de ponta para nossos clientes.</p>
-</section>
-
-<section id="benefits" class="benefits">
-    <h2>Por que escolher a Zona Segura?</h2>
-    <ul>
-        <li><i class="fas fa-shield-alt"></i><br>Proteção garantida 24h</li>
-        <li><i class="fas fa-bolt"></i><br>Tecnologia de ponta</li>
-        <li><i class="fas fa-users"></i><br>Equipe especializada</li>
-        <li><i class="fas fa-handshake"></i><br>Serviço qualificado</li>
-    </ul>
-</section>
-
-<section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <ul>
-        <li><i class="fas fa-video"></i><br><strong>Instalação de câmeras e Alarmes:</strong> Câmeras de alta resolução com acesso remoto e Alarmes modernos.</li>
-        <li><i class="fas fa-shield-alt"></i><br><strong>Suporte técnico:</strong> Manutenção e suporte rápido para seu sistema de segurança.</li>
-        <li><i class="fas fa-tools"></i><br><strong>Manutenção preventiva:</strong> Garantimos funcionamento contínuo dos equipamentos.</li>
-        <li><i class="fas fa-user-shield"></i><br><strong>Consultoria em segurança:</strong> análise personalizada para cada ambiente.</li>
-    </ul>
-</section>
-
-<section id="garantia" class="guarantee">
-    <h2>Nossas Garantias</h2>
-    <ul>
-        <li><i class="fas fa-certificate"></i><br><strong>Produtos:</strong> até 2 anos de garantia.</li>
-        <li><i class="fas fa-tools"></i><br><strong>Serviços:</strong> 3 meses de garantia.</li>
-    </ul>
-</section>
-
-<section id="depoimentos" class="testimonials">
-    <h2>Depoimentos</h2>
-    <article>
-        <p><strong>João S.</strong><br>"A Zona Segura transformou a segurança da minha empresa. Atendimento excelente e tecnologia avançada."</p>
-    </article>
-    <article>
-        <p><strong>Maria F.</strong><br>"Agora me sinto muito mais segura em casa. Recomendo o serviço para todos."</p>
-    </article>
-</section>
-
-<section id="faq" class="faq">
-    <h2>Perguntas Frequentes</h2>
-    <article>
-        <h3>Quais tipos de câmeras vocês instalam?</h3>
-        <p>Instalamos câmeras analógicas, IP, com gravação em nuvem e acesso remoto via celular ou computador..</p>
-    </article>
-    <article>
-        <h3>Qual o prazo de instalação?</h3>
-        <p>Normalmente entre 1 e 3 dias, dependendo da complexidade do projeto.</p>
-    </article>
-    <article>
-        <h3>Há garantia nos serviços?</h3>
-        <p>Sim, oferecemos garantia de até 2 anos para produtos e 3 meses para serviços.</p>
-    </article>
-</section>
-
-<section id="galeria">
-    <h2>Galeria de Imagens</h2>
-    <div class="gallery">
-        <img src="cameras.jpg" alt="Câmeras de segurança" loading="lazy">
-        <img src="acesso remoto.jpg" alt="Acesso remoto" loading="lazy">
-        <img src="alarme.jpg" alt="Alarme" loading="lazy">
-    </div>
-</section>
-
-<section id="contato">
-    <h2>Contato</h2>
-    <p><strong>Telefone:</strong> <a href="tel:+5561991614382">(61) 99161-4382</a></p>
-    <p><strong>Email:</strong> <a href="mailto:zonasegurasistemas@gmail.com">zonasegurasistemas@gmail.com</a></p>
-    <p><strong>Endereço:</strong> Brasília, Distrito Federal</p>
-</section>
+  <section id="sobre"><h2>Sobre a Zona Segura</h2><p>Conteúdo...</p></section>
+  <section id="benefits"><h2>Por que escolher a Zona Segura?</h2><p>Conteúdo...</p></section>
+  <section id="servicos"><h2>Nossos Serviços</h2><p>Conteúdo...</p></section>
+  <section id="garantia"><h2>Nossas Garantias</h2><p>Conteúdo...</p></section>
+  <section id="depoimentos"><h2>Depoimentos</h2><p>Conteúdo...</p></section>
+  <section id="faq"><h2>Perguntas Frequentes</h2><p>Conteúdo...</p></section>
+  <section id="galeria"><h2>Galeria de Imagens</h2><p>Conteúdo...</p></section>
+  <section id="contato"><h2>Contato</h2><p>Conteúdo...</p></section>
 </main>
 
-<footer>
-    <p>&copy; 2025 Zona Segura.</p>
-</footer>
+<footer>&copy; 2025 Zona Segura.</footer>
 
-<!-- Botão fixo no canto esquerdo -->
-<a href="https://wa.me/61991614382" target="_blank" class="fixed-button-left">
-    Peça um orçamento
-</a>
+<!-- Botão fixo esquerdo -->
+<a href="https://wa.me/61991614382" target="_blank" class="fixed-button-left">Peça um orçamento</a>
 
-<!-- Botões flutuantes no canto direito -->
+<!-- Botões flutuantes direita -->
 <div class="floating-buttons">
-  <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://www.instagram.com/zonaseguraa?igsh=MWtvNzE4aTJxNm9ieQ==" class="instagram" target="_blank" title="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
+  <a href="https://wa.me/61991614382" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/zonaseguraa" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
 
 <script>
@@ -312,25 +198,12 @@ toggle.addEventListener("click", () => {
   nav.classList.toggle("active");
   toggle.classList.toggle("open");
 });
-
-// Animação seções
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll("section");
-    function checkVisible() {
-        let windowBottom = window.innerHeight + window.scrollY;
-        sections.forEach(section => {
-            if (windowBottom > section.offsetTop + 100) {
-                section.classList.add("visible");
-            }
-        });
-    }
-    window.addEventListener("scroll", checkVisible);
-    checkVisible();
-});
 </script>
 
 </body>
 </html>
+
+
 
 
 
