@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* --- CSS Geral --- */
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   margin: 0;
@@ -16,6 +15,8 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
 }
+
+/* Header */
 header {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092795364-44b1f5f0a4c2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
   color: white;
@@ -26,7 +27,7 @@ header {
 .logo { max-width: 150px; height: auto; margin-bottom: 10px; }
 .slogan { font-family: 'Poppins', sans-serif; font-size: 22px; color: white; font-weight: 600; margin: 0; }
 
-/* Menu principal */
+/* Desktop menu */
 nav {
   display: flex;
   justify-content: center;
@@ -51,7 +52,7 @@ nav a:hover {
   color: #ffdd59;
 }
 
-/* Botão hamburguer */
+/* Hamburger button */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -60,41 +61,65 @@ nav a:hover {
   position: fixed;
   top: 15px;
   right: 20px;
-  z-index: 1001;
+  z-index: 1002;
 }
 .menu-toggle i { transition: transform 0.3s ease; }
-.menu-toggle.open i { transform: rotate(90deg); }
 
-/* Mobile menu */
-@media (max-width: 768px) {
-  nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100vh;
-    flex-direction: column;
-    padding-top: 60px;
-    transition: left 0.3s ease;
-  }
-  nav.active { left: 0; }
-  nav a { display: block; padding: 15px; border-top: 1px solid rgba(255,255,255,0.2); }
-  .menu-toggle { display: block; }
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #1e3799;
+  z-index: 1001;
+  padding-top: 60px;
+  flex-direction: column;
+  display: flex;
+  transition: left 0.3s ease;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.4);
+}
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-weight: bold;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  transition: background 0.3s;
+}
+.mobile-menu a:hover { background: #0a3d62; }
+/* Close button X */
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
 }
 
-/* Efeito de desfoque no conteúdo quando menu aberto */
-body.menu-open main,
-body.menu-open header,
-body.menu-open footer {
-  filter: blur(4px);
+/* Overlay escuro com desfoque */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
   pointer-events: none;
-  user-select: none;
-  transition: filter 0.3s ease;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
 
-main { margin-top: 70px; }
+/* Mostrar overlay e menu */
+body.menu-open .mobile-menu { left: 0; }
+body.menu-open .overlay { opacity: 1; pointer-events: auto; }
 
-/* Seções */
+/* Main e seções */
+main { margin-top: 70px; }
 section { padding: 60px 20px; }
 section h2 { text-align: center; font-size: 2.2em; margin-bottom: 20px; color: #0a3d62; }
 
@@ -113,10 +138,7 @@ section h2 { text-align: center; font-size: 2.2em; margin-bottom: 20px; color: #
   z-index: 10000;
   transition: transform 0.3s ease, background 0.3s ease;
 }
-.fixed-button-left:hover {
-  transform: scale(1.05);
-  background: #128C7E;
-}
+.fixed-button-left:hover { transform: scale(1.05); background: #128C7E; }
 
 /* Botões flutuantes direita */
 .floating-buttons {
@@ -152,6 +174,11 @@ section h2 { text-align: center; font-size: 2.2em; margin-bottom: 20px; color: #
 @keyframes floatIn { to { opacity: 1; transform: translateY(0); } }
 
 footer { background: #0a3d62; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+
+/* Mobile only */
+@media (min-width: 769px) {
+  .menu-toggle, .mobile-menu, .overlay { display: none; }
+}
 </style>
 </head>
 <body>
@@ -163,30 +190,34 @@ footer { background: #0a3d62; color: white; text-align: center; padding: 20px; f
   </div>
 </header>
 
-<!-- Botão hamburguer -->
+<!-- Hamburger button -->
 <span class="menu-toggle"><i class="fas fa-bars"></i></span>
 
-<!-- Menu principal -->
-<nav>
-    <a href="#sobre">Sobre Nós</a>
-    <a href="#benefits">Por que escolher</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#garantia">Garantias</a>
-    <a href="#depoimentos">Depoimentos</a>
-    <a href="#faq">FAQ</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#contato">Contato</a>
-</nav>
+<!-- Mobile menu -->
+<div class="mobile-menu">
+  <span class="close-btn"><i class="fas fa-times"></i></span>
+  <a href="#sobre">Sobre Nós</a>
+  <a href="#benefits">Por que escolher</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#garantia">Garantias</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#faq">FAQ</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay"></div>
 
 <main>
-  <section id="sobre"><h2>Sobre a Zona Segura</h2><p>Conteúdo...</p></section>
-  <section id="benefits"><h2>Por que escolher a Zona Segura?</h2><p>Conteúdo...</p></section>
-  <section id="servicos"><h2>Nossos Serviços</h2><p>Conteúdo...</p></section>
-  <section id="garantia"><h2>Nossas Garantias</h2><p>Conteúdo...</p></section>
-  <section id="depoimentos"><h2>Depoimentos</h2><p>Conteúdo...</p></section>
-  <section id="faq"><h2>Perguntas Frequentes</h2><p>Conteúdo...</p></section>
-  <section id="galeria"><h2>Galeria de Imagens</h2><p>Conteúdo...</p></section>
-  <section id="contato"><h2>Contato</h2><p>Conteúdo...</p></section>
+  <section id="sobre"><h2>Sobre a Zona Segura</h2><p>Conteúdo sobre a empresa...</p></section>
+  <section id="benefits"><h2>Por que escolher a Zona Segura?</h2><p>Conteúdo de benefícios...</p></section>
+  <section id="servicos"><h2>Nossos Serviços</h2><p>Conteúdo de serviços...</p></section>
+  <section id="garantia"><h2>Nossas Garantias</h2><p>Conteúdo de garantias...</p></section>
+  <section id="depoimentos"><h2>Depoimentos</h2><p>Conteúdo de depoimentos...</p></section>
+  <section id="faq"><h2>Perguntas Frequentes</h2><p>Conteúdo de FAQ...</p></section>
+  <section id="galeria"><h2>Galeria de Imagens</h2><p>Conteúdo da galeria...</p></section>
+  <section id="contato"><h2>Contato</h2><p>Conteúdo de contato...</p></section>
 </main>
 
 <footer>&copy; 2025 Zona Segura.</footer>
@@ -201,14 +232,37 @@ footer { background: #0a3d62; color: white; text-align: center; padding: 20px; f
 </div>
 
 <script>
-// Menu hamburguer responsivo com desfoque
+// Seleção dos elementos
 const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+const mobileMenu = document.querySelector(".mobile-menu");
+const closeBtn = document.querySelector(".mobile-menu .close-btn");
+const overlay = document.querySelector(".overlay");
+const menuLinks = document.querySelectorAll(".mobile-menu a");
 
+// Abrir menu
 toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  toggle.classList.toggle("open");
-  document.body.classList.toggle("menu-open"); // adiciona/remova a classe para desfoque
+  document.body.classList.add("menu-open");
+});
+
+// Fechar menu
+closeBtn.addEventListener("click", () => {
+  document.body.classList.remove("menu-open");
+});
+overlay.addEventListener("click", () => {
+  document.body.classList.remove("menu-open");
+});
+
+// Fechar menu ao clicar em link e scroll suave com offset
+menuLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+    const offset = 70; // altura do menu fixo
+    const elementPosition = targetSection.offsetTop - offset;
+    window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+    document.body.classList.remove("menu-open"); // fecha menu
+  });
 });
 </script>
 
