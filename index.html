@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,16 +7,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zona Segura | Sistemas de Segurança em Brasília</title>
+<title>Instalação de Câmeras e Segurança Eletrônica em Brasília | Zona Segura</title>
 
-<meta name="description" content="Especializada em instalação de câmeras, alarmes, interfones, vídeo porteiros e controle de acesso em Brasília.">
-
-<meta name="keywords" content="câmeras Brasília, instalação de câmeras, alarmes, vídeo porteiro, interfones, controle de acesso, CFTV">
+<meta name="description" content="A Zona Segura oferece instalação e manutenção de câmeras de segurança, alarmes, interfones, vídeo porteiros e controle de acesso em Brasília e região. Solicite seu orçamento!">
 
 <meta name="author" content="Zona Segura">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="robots" content="index, follow">
 
+<meta name="theme-color" content="#111111">
+
+<link rel="canonical" href="https://zonasegurasistemas.com.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zona Segura | Segurança Eletrônica em Brasília">
+<meta property="og:description" content="Instalação e manutenção de câmeras, alarmes, interfones, vídeo porteiros e controle de acesso em Brasília e região.">
+<meta property="og:url" content="https://zonasegurasistemas.com.br/">
+<meta property="og:image" content="https://zonasegurasistemas.com.br/banner.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Zona Segura">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zona Segura | Segurança Eletrônica em Brasília">
+<meta name="twitter:description" content="Instalação de câmeras, alarmes, interfones, vídeo porteiros e controle de acesso em Brasília.">
+<meta name="twitter:image" content="https://zonasegurasistemas.com.br/banner.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,6 +40,7 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G79VFQYCZ3"></script>
 
 <script>
@@ -30,6 +48,60 @@ window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-G79VFQYCZ3');
+</script>
+
+<!-- Dados estruturados da empresa -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Zona Segura",
+  "description": "Instalação e manutenção de câmeras de segurança, alarmes, interfones, vídeo porteiros e sistemas de controle de acesso em Brasília e região.",
+  "url": "https://zonasegurasistemas.com.br/",
+  "logo": "https://zonasegurasistemas.com.br/logo.png",
+  "image": "https://zonasegurasistemas.com.br/banner.jpg",
+  "telephone": "+55-61-99161-4382",
+  "email": "zonasegurasistemas@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brasília",
+    "addressRegion": "DF",
+    "addressCountry": "BR"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Brasília e região, Distrito Federal"
+  },
+  "sameAs": [
+    "https://www.instagram.com/zonaseguraa/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Segurança Eletrônica",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Instalação e manutenção de câmeras de segurança"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Instalação e manutenção de alarmes"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Instalação e manutenção de interfones"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Instalação de vídeo porteiros"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Instalação de controle de acesso"
+      }
+    ]
+  }
+}
 </script>
 
 <style>
@@ -43,447 +115,280 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-
 background:#f7f7f7;
-
 color:#333;
-
 line-height:1.6;
-
+overflow-x:hidden;
 }
 
 /* MENU */
 
 header{
-
 position:fixed;
-
 top:0;
-
 left:0;
-
 width:100%;
-
 background:rgba(0,0,0,.75);
-
 backdrop-filter:blur(10px);
-
 z-index:999;
-
 }
 
 nav{
-
 max-width:1200px;
-
 margin:auto;
-
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
-
 padding:15px 30px;
-
 }
 
 .logo{
-
 height:70px;
-
 }
 
 .menu{
-
 display:flex;
-
 gap:35px;
-
 }
 
 .menu a{
-
 color:white;
-
 text-decoration:none;
-
 font-weight:500;
-
 transition:.3s;
-
 }
 
 .menu a:hover{
-
 color:#00aaff;
-
 }
 
 /* BANNER */
 
 .hero{
-
 height:100vh;
-
 background:url("banner.jpg") center center/cover;
-
 position:relative;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 text-align:center;
-
 }
 
 .hero::before{
-
 content:"";
-
 position:absolute;
-
 width:100%;
-
 height:100%;
-
 background:rgba(0,0,0,.65);
-
 }
 
 .hero-content{
-
 position:relative;
-
 z-index:2;
-
 color:white;
-
 padding:20px;
-
 max-width:850px;
-
 }
 
 .hero h1{
-
 font-size:60px;
-
 margin-bottom:20px;
-
 }
 
 .hero p{
-
 font-size:22px;
-
 margin-bottom:35px;
-
 }
 
 .btn{
-
 display:inline-block;
-
 padding:16px 40px;
-
 background:#25D366;
-
 color:white;
-
 text-decoration:none;
-
 font-weight:bold;
-
 border-radius:40px;
-
 transition:.3s;
-
 }
 
 .btn:hover{
-
 background:#1eb85a;
-
 transform:translateY(-3px);
-
 }
 
 /* SEÇÕES */
 
 section{
-
 padding:90px 8%;
-
 }
 
 section h2{
-
 text-align:center;
-
 font-size:38px;
-
 margin-bottom:50px;
-
 color:#222;
-
 }
 
 /* SOBRE */
 
 .sobre{
-
 max-width:1100px;
-
 margin:auto;
-
 display:grid;
-
 grid-template-columns:1fr 1fr;
-
 gap:60px;
-
 align-items:center;
-
 }
 
 .sobre img,
 .galeria img{
-
 width:100%;
 height:500px;
 object-fit:cover;
 border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,.15);
 transition:.4s;
-
 }
 
 .sobre img:hover,
 .galeria img:hover{
-
 transform:scale(1.04);
-
 }
 
 .sobre p{
-
 font-size:18px;
-
 text-align:justify;
-
 }
 
 /* SERVIÇOS */
 
 .cards{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
 gap:25px;
-
 }
 
 .card{
-
 background:white;
-
 padding:35px;
-
 border-radius:15px;
-
 text-align:center;
-
 box-shadow:0 10px 20px rgba(0,0,0,.08);
-
 transition:.3s;
-
 }
 
 .card:hover{
-
 transform:translateY(-10px);
-
 }
 
 .card i{
-
 font-size:55px;
-
 color:#00aaff;
-
 margin-bottom:20px;
-
 }
 
 .card h3{
-
 margin-bottom:15px;
-
 }
 
 /* GALERIA */
 
 .galeria{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
 gap:20px;
-
 }
 
 .galeria img{
-
 width:100%;
-
-height:320px;
-
+height:240px;
 object-fit:cover;
-
 border-radius:15px;
-
 transition:.4s;
-
 box-shadow:0 8px 20px rgba(0,0,0,.15);
-
 }
 
 .galeria img:hover{
-
 transform:scale(1.04);
-
 }
 
 /* DIFERENCIAIS */
 
 .diferenciais{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
 gap:25px;
-
 }
 
 .item{
-
 background:white;
-
 padding:30px;
-
 border-radius:15px;
-
 box-shadow:0 5px 15px rgba(0,0,0,.08);
-
 }
 
 .item i{
-
 font-size:45px;
-
 color:#00aaff;
-
 margin-bottom:15px;
-
 }
 
 /* CONTATO */
 
 .contato{
-
 text-align:center;
-
 font-size:18px;
-
 }
 
 .contato p{
-
 margin:10px 0;
-
 }
 
 footer{
-
 background:#111;
-
 color:white;
-
 text-align:center;
-
 padding:40px;
-
 }
 
 /* BOTÕES */
 
 .floating-buttons{
-
 position:fixed;
-
 bottom:25px;
-
 right:25px;
-
 display:flex;
-
 flex-direction:column;
-
 gap:15px;
-
 z-index:999;
-
 }
 
 .floating-buttons a{
-
 width:58px;
-
 height:58px;
-
 display:flex;
-
 align-items:center;
-
 justify-content:center;
-
 border-radius:50%;
-
 color:white;
-
 font-size:24px;
-
 text-decoration:none;
-
 box-shadow:0 5px 15px rgba(0,0,0,.25);
-
 }
 
 .whatsapp{
-
 background:#25D366;
-
 }
 
 .telefone{
-
 background:#444;
-
 }
 
 .instagram{
-
 background:#E4405F;
-
 }
+
+/* CELULAR */
 
 @media(max-width:900px){
 
@@ -521,16 +426,6 @@ display:none;
 
 }
 
-.galeria img{
-height:240px;
-}
-
-body{
-overflow-x:hidden;
-}
-
-}
-
 </style>
 
 </head>
@@ -541,7 +436,11 @@ overflow-x:hidden;
 
 <nav>
 
-<img src="logo.png" class="logo">
+<img
+src="logo.png"
+class="logo"
+alt="Zona Segura - Segurança Eletrônica em Brasília"
+>
 
 <div class="menu">
 
@@ -561,22 +460,24 @@ overflow-x:hidden;
 
 </header>
 
+<!-- BANNER PRINCIPAL -->
+
 <section class="hero" id="inicio">
 
 <div class="hero-content">
 
-<h1>Sua segurança começa aqui.</h1>
+<h1>Instalação de Câmeras e Segurança Eletrônica em Brasília</h1>
 
 <p>
-
-Instalação de câmeras, alarmes, interfones,
-vídeo porteiros e controle de acesso.
-
+Instalação e manutenção de câmeras, alarmes, interfones,
+vídeo porteiros e controle de acesso para residências,
+empresas e condomínios em Brasília e região.
 </p>
 
 <a class="btn"
 href="https://wa.me/5561991614382"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 Solicitar Orçamento
 
@@ -585,6 +486,9 @@ Solicitar Orçamento
 </div>
 
 </section>
+
+<!-- SOBRE -->
+
 <section id="sobre">
 
 <h2>Sobre a Zona Segura</h2>
@@ -593,32 +497,31 @@ Solicitar Orçamento
 
 <div>
 
-<img src="sobre.jpg" alt="Instalação de sistema de segurança">
+<img
+src="sobre.jpg"
+alt="Serviço de instalação de sistema de segurança eletrônica"
+loading="lazy"
+decoding="async"
+>
 
 </div>
 
 <div>
 
 <p>
-
 A <strong>Zona Segura</strong> atua em Brasília oferecendo soluções completas em segurança eletrônica para residências, empresas e condomínios.
-
 </p>
 
 <br>
 
 <p>
-
-Realizamos projetos personalizados com equipamentos de alta qualidade, sempre buscando a melhor solução para cada cliente.
-
+Realizamos instalações e projetos personalizados com equipamentos de qualidade, buscando sempre a melhor solução para cada cliente.
 </p>
 
 <br>
 
 <p>
-
-Nossa equipe trabalha com responsabilidade, organização e acabamento profissional, garantindo instalações seguras e duradouras.
-
+Nosso atendimento é especializado e realizado com responsabilidade, organização e acabamento profissional, buscando entregar instalações seguras e duradouras.
 </p>
 
 </div>
@@ -626,6 +529,8 @@ Nossa equipe trabalha com responsabilidade, organização e acabamento profissio
 </div>
 
 </section>
+
+<!-- SERVIÇOS -->
 
 <section id="servicos">
 
@@ -640,9 +545,7 @@ Nossa equipe trabalha com responsabilidade, organização e acabamento profissio
 <h3>Instalação de Câmeras</h3>
 
 <p>
-
 Projetos completos com câmeras analógicas e IP para residências, empresas e condomínios.
-
 </p>
 
 </div>
@@ -654,9 +557,7 @@ Projetos completos com câmeras analógicas e IP para residências, empresas e c
 <h3>Alarmes</h3>
 
 <p>
-
 Instalação, configuração e manutenção de sistemas de alarme para proteção do seu patrimônio.
-
 </p>
 
 </div>
@@ -668,9 +569,7 @@ Instalação, configuração e manutenção de sistemas de alarme para proteçã
 <h3>Interfones</h3>
 
 <p>
-
 Instalação e manutenção de interfones residenciais e coletivos.
-
 </p>
 
 </div>
@@ -682,9 +581,7 @@ Instalação e manutenção de interfones residenciais e coletivos.
 <h3>Vídeo Porteiros</h3>
 
 <p>
-
 Mais praticidade e segurança para controlar quem entra no seu imóvel.
-
 </p>
 
 </div>
@@ -696,9 +593,7 @@ Mais praticidade e segurança para controlar quem entra no seu imóvel.
 <h3>Controle de Acesso</h3>
 
 <p>
-
 Sistemas com senha, cartão, biometria e reconhecimento facial.
-
 </p>
 
 </div>
@@ -707,27 +602,62 @@ Sistemas com senha, cartão, biometria e reconhecimento facial.
 
 </section>
 
+<!-- GALERIA -->
+
 <section id="galeria">
 
 <h2>Alguns de nossos serviços</h2>
 
 <div class="galeria">
 
-<img src="foto1.jpg" alt="Instalação de câmeras">
+<img
+src="foto1.jpg"
+alt="Instalação de câmeras de segurança"
+loading="lazy"
+decoding="async"
+>
 
-<img src="foto2.jpg" alt="Instalação de alarme">
+<img
+src="foto2.jpg"
+alt="Instalação de sistema de alarme"
+loading="lazy"
+decoding="async"
+>
 
-<img src="foto3.jpg" alt="Controle de acesso">
+<img
+src="foto3.jpg"
+alt="Instalação de sistema de controle de acesso"
+loading="lazy"
+decoding="async"
+>
 
-<img src="foto4.jpg" alt="Vídeo porteiro">
+<img
+src="foto4.jpg"
+alt="Instalação de vídeo porteiro"
+loading="lazy"
+decoding="async"
+>
 
-<img src="foto5.jpg" alt="Instalação residencial">
+<img
+src="foto5.jpg"
+alt="Instalação de câmeras de segurança em residência"
+loading="lazy"
+decoding="async"
+>
 
-<img src="foto6.jpg" alt="Instalação empresarial">
+<img
+src="foto6.jpg"
+alt="Instalação de câmeras de segurança em empresa"
+loading="lazy"
+decoding="async"
+>
 
 </div>
 
 </section>
+
+<!-- DIFERENCIAIS -->
+
 <section id="diferenciais">
 
 <h2>Por que escolher a Zona Segura</h2>
@@ -735,32 +665,58 @@ Sistemas com senha, cartão, biometria e reconhecimento facial.
 <div class="diferenciais">
 
 <div class="item">
+
 <i class="fas fa-user-check"></i>
+
 <h3>Atendimento Especializado</h3>
-<p>Equipe qualificada para projetar e instalar sistemas de segurança com qualidade e eficiência.</p>
+
+<p>
+Atendimento especializado para planejar e instalar sistemas de segurança com qualidade e eficiência.
+</p>
+
 </div>
 
 <div class="item">
+
 <i class="fas fa-shield-alt"></i>
+
 <h3>Equipamentos de Qualidade</h3>
-<p>Trabalhamos com equipamentos modernos para garantir segurança, estabilidade e excelente desempenho.</p>
+
+<p>
+Trabalhamos com equipamentos modernos para garantir segurança, estabilidade e excelente desempenho.
+</p>
+
 </div>
 
 <div class="item">
+
 <i class="fas fa-clock"></i>
+
 <h3>Agilidade</h3>
-<p>Instalações organizadas e dentro do prazo, reduzindo transtornos e entregando um serviço de alto padrão.</p>
+
+<p>
+Instalações organizadas e dentro do prazo, reduzindo transtornos e entregando um serviço de qualidade.
+</p>
+
 </div>
 
 <div class="item">
+
 <i class="fas fa-tools"></i>
+
 <h3>Manutenção</h3>
-<p>Também realizamos manutenção preventiva e corretiva em sistemas já instalados.</p>
+
+<p>
+Também realizamos manutenção preventiva e corretiva em sistemas já instalados.
+</p>
+
 </div>
 
 </div>
 
 </section>
+
+<!-- CONTATO -->
 
 <section id="contato">
 
@@ -772,13 +728,14 @@ Sistemas com senha, cartão, biometria e reconhecimento facial.
 
 <p><strong>E-mail:</strong> zonasegurasistemas@gmail.com</p>
 
-<p><strong>Brasília - Distrito Federal</strong></p>
+<p><strong>Atendimento em Brasília - Distrito Federal e região</strong></p>
 
 <br>
 
 <a class="btn"
 href="https://wa.me/5561991614382"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 Solicitar Orçamento pelo WhatsApp
 
@@ -788,6 +745,8 @@ Solicitar Orçamento pelo WhatsApp
 
 </section>
 
+<!-- RODAPÉ -->
+
 <footer>
 
 <h3>Zona Segura</h3>
@@ -795,46 +754,58 @@ Solicitar Orçamento pelo WhatsApp
 <br>
 
 <p>
-
 Instalação de Câmeras • Alarmes • Interfones • Vídeo Porteiros • Controle de Acesso
-
 </p>
 
 <br>
 
 <p>
-
-© 2025 Zona Segura - Todos os direitos reservados.
-
+© 2026 Zona Segura - Todos os direitos reservados.
 </p>
 
 </footer>
 
+<!-- BOTÕES FLUTUANTES -->
+
 <div class="floating-buttons">
 
-<a href="tel:+5561991614382" class="telefone">
+<a
+href="tel:+5561991614382"
+class="telefone"
+aria-label="Ligar para a Zona Segura"
+>
 
 <i class="fas fa-phone"></i>
 
 </a>
 
-<a href="https://wa.me/5561991614382"
+<a
+href="https://wa.me/5561991614382"
 class="whatsapp"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Conversar com a Zona Segura pelo WhatsApp"
+>
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
 
-<a href="https://www.instagram.com/zonaseguraa/"
+<a
+href="https://www.instagram.com/zonaseguraa/"
 class="instagram"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Visitar Instagram da Zona Segura"
+>
 
 <i class="fab fa-instagram"></i>
 
 </a>
 
 </div>
+
+<!-- ANIMAÇÃO DAS SEÇÕES -->
 
 <script>
 
@@ -859,6 +830,8 @@ duration:700,
 fill:"forwards"
 
 });
+
+observer.unobserve(entry.target);
 
 }
 
